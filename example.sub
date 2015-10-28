@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#SBATCH -A short
+#SBATCH -N 2
+#SBATCH --exclusive
+#SBATCH --time=00:30:00
+
+#SBATCH -J terasort
+#SBATCH --error=terasort.%J.err
+#SBATCH --output=terasort.%J.out
+
+# Up to four nodes can be used on the short, med, and long queues.
+# The maximum run times for each are 30, 120, and 360 minutes, respectively.
+
+make teragen terasort teravalidate
+
+mpirun -np 64 ./teragen -f data.dat -c 1000
+
+mpirun -np 64 ./terasort -f data.dat 
+
+mpirun -np 64 ./teravalidate -f data.dat
