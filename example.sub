@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH -A short
+#SBATCH --partition short
 #SBATCH -N 2
 #SBATCH --exclusive
 #SBATCH --time=00:30:00
@@ -9,8 +9,9 @@
 #SBATCH --error=terasort.%J.err
 #SBATCH --output=terasort.%J.out
 
-# Up to four nodes can be used on the short, med, and long queues.
+# Up to four nodes can be used on the 'short', 'med', and 'long' partitions.
 # The maximum run times for each are 30, 120, and 360 minutes, respectively.
+# You can view the different queues and time limits via the slurm command 'sinfo'.
 
 make teragen terasort teravalidate
 
