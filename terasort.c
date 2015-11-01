@@ -29,7 +29,7 @@ void terasort(terarec_t *local_data, int  local_len,
 			   all_data, local_len, mpi_tera_type, 0, MPI_COMM_WORLD);
 
 	if(rank == 0)
-		qsort(all_data, P * local_len, sizeof(mpi_tera_type), teraCompare);
+		qsort(all_data, P * local_len, sizeof(terarec_t), teraCompare);
 
 	*sorted_data = malloc(sizeof(terarec_t) * local_len);
 
