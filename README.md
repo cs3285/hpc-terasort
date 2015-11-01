@@ -14,6 +14,12 @@ Note that this is the [GT github server](https:github.gatech.edu), so you will n
 
 Optionally, you may choose use a git hosting service for your code.  As always, please **do not make your repository public** on Github or another git hosting service.  Anyone will be able to see it.  If you feel the need to use a hosting service for your project, please keep your repository private.  Your GT account allows you to create free private repositories on [the GT github server](https:github.gatech.edu).
 
+For testing on the cluster, you will need to modify '~/.bashrc' to enable 'mpicc', the MPI C compiler. Append the following line to '~/.bashrc':
+
+<pre><code>
+	source /nethome/rvuduc3/local/jinx/setup-mpi.sh
+</code></pre>
+
 ##Programming
 The data type you will sorting is similar to the one used in [Hadoop's Terasort benchmark](https://hadoop.apache.org/docs/current/api/org/apache/hadoop/examples/terasort/package-summary.html#package_description).  It consists of a 10 byte key and an 88 bytes value.  Procedures for input/output and comparison of these records are provided for you in the **terarec.h** and **terarec.c** files.  Your only task is to complete the implementation of the terasort function, which has the signature
 
