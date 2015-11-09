@@ -29,10 +29,10 @@ The data type you will sorting is similar to the one used in [Hadoop's Terasort 
 
 Here local_data is the data initially stored in memory at the calling node and local_len is the number of elements in this array.  The remaining parameters are for return values.  The arrays sorted_count and sorted_displs indicate the length and displacement of each node's sorted segment within the whole.  Thus, the data returned to node rank represents the sorted sequence starting at sorted_displs[rank] and has length sorted_count[rank].  The data itself is returned in \*sorted_data, memory which the terasort function itself allocates.
 
-An example of the function's usage can be found in the **terasort_main.c** and the **terametrics.c** files.
+An example of the function's usage can be found in the **terasort_main.c**.
 
 ##Measuring Performance
-In addition to illustrating the usage of the terasort function, the **terasort_main.c** file also measures the running time of the code.  Profile your code, experiment with different strategies, and come up with the fastest implementation you can.  Performance tests will be a large part of your evaluation.You are encouraged share your ideas and results on the Piazza forum.  Good luck!
+The **terasort_main.c** file illustrates the usage of the terasort function. You can add timers inside **terasort_main.c** to profile your code, experiment with different strategies, and come up with the fastest implementation you can.  Performance tests will be a large part of your evaluation.You are encouraged share your ideas and results on the Piazza forum.  Good luck!
 
 ## Submitting Your Code
 When you have finished and tested your implementations, please submit them to the [Udacity site](https://www.udacity.com/course/viewer#!/c-ud281/l-5154708552/m-5140272747), which will make a quick test for correctness.  After the deadline, the TAs will pull the code and perform some timing runs to confirm that your implementation is efficient, and compare your results to those of other students.
