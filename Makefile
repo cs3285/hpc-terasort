@@ -1,5 +1,5 @@
 MPICC = mpicc
-MPICFLAGS = -std=c99
+MPICFLAGS = -std=c99 -fopenmp
 MPICOPTFLAGS = -O2 -g -Wall
 MPILDFLAGS =
 
