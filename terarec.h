@@ -17,9 +17,9 @@ extern MPI_Datatype mpi_tera_type;
 void teraMPICommitType();
 
 //A comparison function for the terarec_t type returning
-//-1 if a->key < b->key
+// < 0 if a->key < b->key
 // 0 if a->key = b->key
-// 1 if a->key > b->key
+// > 0 if a->key > b->key
 int teraCompare(const void *a, const void *b);
 
 
