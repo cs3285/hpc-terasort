@@ -19,4 +19,6 @@ mpirun -np 64 ./teragen -f data.dat -c 1000
 
 mpirun -np 64 ./terasort -f data.dat 
 
+sleep 10
+
 mpirun -np 64 ./teravalidate -f data.dat
