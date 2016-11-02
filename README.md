@@ -7,7 +7,7 @@ In this lab, your task is to implement a distributed sorting algorithm along the
 Begin by obtaining the starter code from the github repository.
 
 <pre><code>
-	git clone https://github.gatech.edu/sb300/oms-hpc-lab4.git
+    git clone --recursive https://github.gatech.edu/omscse6220/lab2.git
 </code></pre>
 
 Note that this is the [GT github server](https:github.gatech.edu), so you will need to authenticate with your GT credentials.
