@@ -35,6 +35,12 @@ An example of the function's usage can be found in the **terasort_main.c**.
 The **terasort_main.c** file illustrates the usage of the terasort function. You can add timers inside **terasort_main.c** to profile your code, experiment with different strategies, and come up with the fastest implementation you can.  Performance tests will be a large part of your evaluation.You are encouraged share your ideas and results on the Piazza forum.  Good luck!
 
 ## Submitting Your Code
-When you have finished and tested your implementations, please submit them to the [Udacity site](https://www.udacity.com/course/viewer#!/c-ud281/l-5154708552/m-5140272747), which will make a quick test for correctness.  After the deadline, the TAs will pull the code and perform some timing runs to confirm that your implementation is efficient, and compare your results to those of other students.
+Submitting Your Code
+
+Once you have completed and tested your implementations, please submit using the submit.py script,
+<pre><code>
+python submit.py
+</code></pre>
+which will do a quick correctness test. You may submit as many times as you like before the deadline. At the deadline, the TA will download the code and perform some timing runs. These results along with a manual inspection of the code will determine your grade.
 
 
