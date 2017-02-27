@@ -10,15 +10,9 @@ Begin by obtaining the starter code from the github repository.
     git clone --recursive https://github.gatech.edu/omscse6220/lab4.git
 </code></pre>
 
-Note that this is the [GT github server](https:github.gatech.edu), so you will need to authenticate with your GT credentials.
+Note that this is the [GT github server](https://github.gatech.edu), so you will need to authenticate with your GT credentials.
 
-Optionally, you may choose use a git hosting service for your code.  As always, please **do not make your repository public** on Github or another git hosting service.  Anyone will be able to see it.  If you feel the need to use a hosting service for your project, please keep your repository private.  Your GT account allows you to create free private repositories on [the GT github server](https:github.gatech.edu).
-
-For testing on the cluster, you will need to modify '~/.bashrc' to enable 'mpicc', the MPI C compiler. Append the following line to '~/.bashrc':
-
-<pre><code>
-	source /nethome/rvuduc3/local/jinx/setup-mpi.sh
-</code></pre>
+Optionally, you may choose use a git hosting service for your code.  As always, please **do not make your repository public** on Github or another git hosting service.  Anyone will be able to see it.  If you feel the need to use a hosting service for your project, please keep your repository private.  Your GT account allows you to create free private repositories on [the GT github server](https://github.gatech.edu).
 
 ##Programming
 The data type you will sorting is similar to the one used in [Hadoop's Terasort benchmark](https://hadoop.apache.org/docs/current/api/org/apache/hadoop/examples/terasort/package-summary.html#package_description).  It consists of a 10 byte key and an 88 bytes value.  Procedures for input/output and comparison of these records are provided for you in the **terarec.h** and **terarec.c** files.  Your only task is to complete the implementation of the terasort function, which has the signature
@@ -33,6 +27,13 @@ An example of the function's usage can be found in the **terasort_main.c**.
 
 ##Measuring Performance
 The **terasort_main.c** file illustrates the usage of the terasort function. You can add timers inside **terasort_main.c** to profile your code, experiment with different strategies, and come up with the fastest implementation you can.  Performance tests will be a large part of your evaluation.You are encouraged share your ideas and results on the Piazza forum.  Good luck!
+
+## Deliverables
+The deliverables for this lab are as follows:
+
+* terasort.c
+
+Please do not make any changes to the *Makefile*. If you include any additional headers or libraries, please make sure they compile as-is on the VM, Deepthought and through Bonnie.
 
 ## Submitting Your Code
 Submitting Your Code
