@@ -38,7 +38,7 @@ $ mpirun -np 4 ./terasort
 $ mpirun -np 4 ./teravalidate
 </code></pre>
 
-A slurm job *example.sub* is included for testing on Deepthought.
+A slurm job, *example.sub*, is included for testing on Deepthought.
 
 ## Deliverables
 The deliverables for this lab are as follows:
