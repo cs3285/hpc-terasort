@@ -86,7 +86,10 @@ int main (int argc, char *argv[]){
 		MPI_Reduce(&calc_diff, runTimes+loopCnt, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
 		int error_acc = teravalidate(sorted_data, sorted_counts[rank]);
 		if (rank == 0 && error_acc)
+		{
 			isValid = 0;
+			break;
+		}
 		//Reset
 		memcpy(local_data, backup_local_data, backup_local_len * sizeof(terarec_t));
 		local_len = backup_local_len;
