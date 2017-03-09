@@ -11,6 +11,9 @@ terasort: terasort_main.c terasort.c terarec.c
 
 teravalidate: teravalidate_main.c teravalidate.c terarec.c
 	$(MPICC) $(MPICFLAGS) $(MPICOPTFLAGS) -o $@ $^ $(MPILDFLAGS)
+	
+terametrics: terametrics.c terasort.c terarec.c teravalidate.c
+	$(MPICC) $(MPICFLAGS) $(MPICOPTFLAGS) -o $@ $^ $(MPILDFLAGS)
 
 naivesort: naivesort.c terarec.c
 	$(MPICC) $(MPICFLAGS) $(MPICOPTFLAGS) -o $@ $^ $(MPILDFLAGS)
