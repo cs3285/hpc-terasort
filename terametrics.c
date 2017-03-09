@@ -85,7 +85,7 @@ int main (int argc, char *argv[]){
 		int error_acc = teravalidate(sorted_data, sorted_counts[rank]);
 		if (rank == 0 && error_acc)
 		{
-			fprintf(stderr, "Solution had invalid results on loop iteration: %ld", loopCnt);
+			fprintf(stderr, "Solution had invalid results on loop iteration: %ld\n", loopCnt);
 			MPI_Abort(MPI_COMM_WORLD, MPI_ERR_KEYVAL);
 		}
 		//Reset
