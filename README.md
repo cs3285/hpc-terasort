@@ -28,7 +28,7 @@ An example of the function's usage can be found in the **terasort_main.c**.
 ##Testing Your Code and Measuring Performance
 The **terasort_main.c** file illustrates the usage of the terasort function. You can add timers inside **terasort_main.c** to profile your code, experiment with different strategies, and come up with the fastest implementation you can.  Performance tests will be a large part of your evaluation.You are encouraged share your ideas and results on the Piazza forum.  Good luck!
 
-An example how to test your code locally would be:
+An example how to check the correctness of your code locally would be:
 <pre><code>
 $ make clean
 $ make teragen teravalidate
