@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#SBATCH --partition short
-#SBATCH -N 2
+#SBATCH -A class
+#SBATCH -N 1
 #SBATCH --exclusive
-#SBATCH --time=00:30:00
+#SBATCH --time=00:20:00
 
 #SBATCH -J terasort
 #SBATCH --error=terasort.%J.err
@@ -15,12 +15,12 @@
 
 source /nethome/rvuduc3/local/jinx/setup-mpi.sh
 
-make teragen terasort teravalidate
+make clean teragen terasort teravalidate
 
-mpirun -np 64 ./teragen -f data.dat -c 1000
+mpirun -np 16 ./teragen -f data.dat -c 1000
 
-mpirun -np 64 ./terasort -f data.dat 
+mpirun -np 16 ./terasort -f data.dat 
 
 sleep 10
 
-mpirun -np 64 ./teravalidate -f data.dat
+mpirun -np 16 ./teravalidate -f data.dat
