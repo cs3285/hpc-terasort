@@ -11,9 +11,7 @@
 
 source /nethome/rvuduc3/local/jinx/setup-mpi.sh
 
-make clean teragen terasort teravalidate terametrics
-
-sleep 5
+make clean teragen terasort teravalidate
 
 #Generate the data
 mpirun -np 16 ./teragen -f data.dat -c 1000
@@ -28,4 +26,8 @@ sleep 10
 mpirun -np 16 ./teravalidate -f data.dat
 
 #Run the benchmark
+make clean
+make teragen terametrics
+mpirun -np 16 ./teragen -f data.dat -c 100000
+sleep 10
 mpirun -np 16 ./terametrics -c 5
