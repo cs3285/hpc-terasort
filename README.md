@@ -38,7 +38,15 @@ $ mpirun -np 4 ./terasort
 $ mpirun -np 4 ./teravalidate
 </code></pre>
 
-A slurm job, *example.sub*, is included for testing on Deepthought.
+We've also included the *terametrics* utility to assist with performance testing:
+<pre>code>
+$ make clean
+$ make teragen terametrics
+$ mpirun -np 16 ./teragen -c 10000
+$ mpirun -np 16 ./terametrics -c 10
+</code></pre>
+
+A slurm job, *example.sub*, is included for running the above on Deepthought.
 
 ## Deliverables
 The deliverables for this lab are as follows:
