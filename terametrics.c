@@ -62,7 +62,7 @@ int main (int argc, char *argv[]){
 	//Initialize items needed for metrics
 	double runTimes[runcount];
 
-	//Save values
+	//Save values across iterations
 	int backup_local_len = local_len;
 	int *backup_sorted_counts = (int*) malloc(sizeof(int) * P);
 	memcpy(backup_sorted_counts, sorted_counts, sizeof(int) * P);
@@ -72,7 +72,6 @@ int main (int argc, char *argv[]){
 	memcpy(backup_local_data, local_data, backup_local_len * sizeof(terarec_t));
 
 	long loopCnt = 0;
-	int isValid = 1;
 
 	for (loopCnt = 0; loopCnt < runcount; loopCnt++)
 	{
@@ -86,8 +85,8 @@ int main (int argc, char *argv[]){
 		int error_acc = teravalidate(sorted_data, sorted_counts[rank]);
 		if (rank == 0 && error_acc)
 		{
-			isValid = 0;
-			break;
+			fprintf(stderr, "Solution had invalid results on loop iteration: %ld", loopCnt);
+			MPI_Abort(MPI_COMM_WORLD, MPI_ERR_KEYVAL);
 		}
 		//Reset
 		memcpy(local_data, backup_local_data, backup_local_len * sizeof(terarec_t));
@@ -98,22 +97,16 @@ int main (int argc, char *argv[]){
 	}
 	if (rank == 0)
 	{
-		if (isValid)
+		double avgCount = 0.0;
+		double finalResult = 0.0;
+
+		for (loopCnt = 0; loopCnt < runcount; loopCnt++)
 		{
-			double avgCount = 0.0;
-			double finalResult = 0.0;
-
-			for (loopCnt = 0; loopCnt < runcount; loopCnt++)
-			{
-				avgCount += runTimes[loopCnt];
-			}
-			finalResult = avgCount / runcount;
-			fprintf(stdout, "Average time over %ld runs: %.4f\n", runcount, finalResult);
+			avgCount += runTimes[loopCnt];
 		}
-		else
-			fprintf(stderr, "Solution had invalid results");
+		finalResult = avgCount / runcount;
+		fprintf(stdout, "Average time over %ld runs: %.4f\n", runcount, finalResult);
 	}
-
 
 	//Cleaning up
 	free(local_data);
