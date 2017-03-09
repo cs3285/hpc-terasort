@@ -11,7 +11,7 @@
 
 source /nethome/rvuduc3/local/jinx/setup-mpi.sh
 
-make clean teragen terasort teravalidate
+make clean teragen terasort teravalidate terametrics
 
 sleep 5
 
