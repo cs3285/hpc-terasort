@@ -39,7 +39,7 @@ $ mpirun -np 4 ./teravalidate
 </code></pre>
 
 We've also included the *terametrics* utility to assist with performance testing:
-<pre>code>
+<pre><code>
 $ make clean
 $ make teragen terametrics
 $ mpirun -np 16 ./teragen -c 10000
