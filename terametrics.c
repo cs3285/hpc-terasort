@@ -59,8 +59,7 @@ int main (int argc, char *argv[]){
 	int *sorted_counts = (int*) malloc(sizeof(int) * P);
 	long *sorted_displs = (long*) malloc(sizeof(long) * P);
 
-	//Performing the sort
-
+	//Initialize items needed for metrics
 	double runTimes[runcount];
 
 	//Save values
