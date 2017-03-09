@@ -15,10 +15,17 @@ make clean teragen terasort teravalidate
 
 sleep 5
 
+#Generate the data
 mpirun -np 16 ./teragen -f data.dat -c 1000
 
+#Run the sort
 mpirun -np 16 ./terasort -f data.dat 
 
+#Make sure the writes complete
 sleep 10
 
+#Validate your run
 mpirun -np 16 ./teravalidate -f data.dat
+
+#Run the benchmark
+mpirun -np 16 ./terametrics -c 5
