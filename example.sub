@@ -13,6 +13,8 @@ source /nethome/rvuduc3/local/jinx/setup-mpi.sh
 
 make clean teragen terasort teravalidate
 
+sleep 5
+
 mpirun -np 16 ./teragen -f data.dat -c 1000
 
 mpirun -np 16 ./terasort -f data.dat 
