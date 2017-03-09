@@ -16,6 +16,7 @@ make clean teragen terasort teravalidate terametrics
 #Generate the data
 mpirun -np 16 ./teragen -f data.dat -c 1000
 sleep 5
+
 #Make sure the benchmark has a "clean" copy
 cp data.dat data_bench.dat
 
@@ -30,5 +31,5 @@ mpirun -np 16 ./teravalidate -f data.dat
 
 #Run the benchmark
 sleep 10
-mpirun -np 16 ./terametrics -f data_bench.dat -c 5
+mpirun -np 16 ./terametrics -f data_bench.dat -c 20
 rm data_bench.dat
