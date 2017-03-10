@@ -46,7 +46,7 @@ $ mpirun -np 16 ./teragen -c 10000
 $ mpirun -np 16 ./terametrics -c 10
 </code></pre>
 
-A slurm job, *example.sub*, is included for running the above on Deepthought.
+A slurm job, *example.sub*, is included for running the above on Deepthought. Please change the `-c` option to 1000000 to match your performance with our rubrics.
 
 You can get the usage of every generated executable file (e.g. teragen, terasort, teravalidate, terametrics) by running `./tera[xx] -h`.
 
