@@ -9,7 +9,7 @@ extern int teravalidate(terarec_t *local_data, int local_len);
 
 #define USAGE \
 "usage:\n"                                                                     \
-"  terasort [options]\n"                                                       \
+"  teravalidate [options]\n"                                                       \
 "options:\n"                                                                   \
 "  -f [filename]       Filename (Default: data.dat)\n"                         \
 "  -h                  Show this help message\n"
