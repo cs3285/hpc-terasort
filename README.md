@@ -58,8 +58,6 @@ The deliverables for this lab are as follows:
 Please do not make any changes to the *Makefile*. If you include any additional headers or libraries, please make sure they compile as-is on the VM, Deepthought and through Bonnie.
 
 ## Submitting Your Code
-Submitting Your Code
-
 Once you have completed and tested your implementations, please submit using the submit.py script,
 <pre><code>
 python submit.py
