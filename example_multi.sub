@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#SBATCH --partition short
+#SBATCH -N 4
+#SBATCH --exclusive
+#SBATCH --exclude=deepthought2
+#SBATCH --time=00:20:00
+#SBATCH --cpus-per-task=16
+
+#SBATCH -J terasort
+#SBATCH --error=terasort.%J.err
+#SBATCH --output=terasort.%J.out
+
+source /nethome/rvuduc3/local/jinx/setup-mpi.sh
+
+make teragen terametrics
+
+if [ ! -e data_bench.dat ]
+then
+    echo "* Creating datafile"
+    mpirun -np 64 ./teragen -c 250000 -f data_bench.dat
+    sleep 10
+else
+    echo "* Reusing existing data file"
+fi
+
+mpirun -np 64 ./terametrics -f data_bench.dat -c 20
