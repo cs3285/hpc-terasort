@@ -1,9 +1,9 @@
-#CSE 6220 Distributed Sorting -- Terasort
+# CSE 6220 Distributed Sorting -- Terasort
 
 In this lab, your task is to implement a distributed sorting algorithm along the lines discussed in the lesson videos.  Your design should be based on the assumption that the data will *not* fit in the physical memory of any one computer in your cluster but that it *will* fit in the union of all the physical memories.  This assumption makes your task slightly different from classical 
 [distributed disk sorting benchmarks](http://sortbenchmark.org/), but many of the same principles apply.
 
-##Getting Started
+## Getting Started
 Begin by obtaining the starter code from the github repository.
 
 <pre><code>
@@ -14,7 +14,7 @@ Note that this is the [GT github server](https://github.gatech.edu), so you will
 
 Optionally, you may choose use a git hosting service for your code.  As always, please **do not make your repository public** on Github or another git hosting service.  Anyone will be able to see it.  If you feel the need to use a hosting service for your project, please keep your repository private.  Your GT account allows you to create free private repositories on [the GT github server](https://github.gatech.edu).
 
-##Programming
+## Programming
 The data type you will sorting is similar to the one used in [Hadoop's Terasort benchmark](https://hadoop.apache.org/docs/current/api/org/apache/hadoop/examples/terasort/package-summary.html#package_description).  It consists of a 10-byte key and an 88-byte value.  Procedures for input/output and comparison of these records are provided for you in the **terarec.h** and **terarec.c** files.  Your only task is to complete the implementation of the terasort function, which has the signature
 
 <pre><code>
@@ -25,7 +25,7 @@ Here local_data is the data initially stored in memory at the calling node and l
 
 An example of the function's usage can be found in the **terasort_main.c**.
 
-##Testing Your Code and Measuring Performance
+## Testing Your Code and Measuring Performance
 Performance tests will be a large part of your evaluation. You are encouraged share your ideas and results on the Piazza forum.
 
 An example how to check the correctness of your code locally would be:
